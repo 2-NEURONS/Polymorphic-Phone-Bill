@@ -1,6 +1,6 @@
 public class PhoneCall implements  BillAction
 {
-    double phoneCallPrice;
+    private double phoneCallPrice;
 
 
     public PhoneCall(double phoneCallPrice)
