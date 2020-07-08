@@ -24,5 +24,4 @@ public class SMSBundleTest
         SMSBundle sms = new SMSBundle(2,2.5);
         assertEquals((int)5.0, (int)(sms.qty * sms.smsPrice));
     }
-
 }
