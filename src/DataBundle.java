@@ -2,8 +2,8 @@ public class DataBundle implements BillAction
 {
 
 
-    int megabytes;
-    double dataBundlePrice;
+    private int megabytes;
+    private double dataBundlePrice;
 
     public DataBundle(int megabytes)
     {
@@ -11,8 +11,27 @@ public class DataBundle implements BillAction
     }
     public double getDataBundlePrice()
     {
-        return dataBundlePrice = megabytes < 500 ? 0.75 : megabytes > 500 ? 0.55 : megabytes > 1000 ? 0.35 : 0.0;
-    }
+          /*
+             mega bytes are priced for the range MB{ 0-499 , 501 - 1000 , 1001 - (+2^31 - 1)}
+             N is any +ve integer
+             for 500MB , the method should return R0.00
+         */
+
+        if(megabytes < 500)
+        {
+            dataBundlePrice = 0.75;
+        }
+        else if(megabytes > 1000)
+        {
+            dataBundlePrice = 0.35;
+        }
+        else if(megabytes > 500)
+        {
+            dataBundlePrice = 0.55;
+        }
+        return  dataBundlePrice;
+
+       }
     @Override
     public double totalCost()
     {
